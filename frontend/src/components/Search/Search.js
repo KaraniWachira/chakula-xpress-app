@@ -5,7 +5,7 @@ import classes from './search.module.css';
 Search.defaultProps = {
   searchRoute: '/search/',
   defaultRoute: '/',
-  placeholder: 'Search Chakula Xpress!',
+  placeholder: 'Search Chakula Xpress',
 };
 
 export default function Search({

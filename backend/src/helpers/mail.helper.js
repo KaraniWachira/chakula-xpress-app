@@ -4,8 +4,8 @@ export const sendEmailReceipt = function (order) {
   const mailClient = getClient();
 
   mailClient.messages
-    .create('sandbox80bf0ab584cb42dbbf5cf0e9a249e188.mailgun.org', {
-      from: 'orders@foodmine.com',
+    .create('sandbox754c84619bbd4e0192805bf10cca8862.mailgun.org', {
+      from: 'orders@chakulaxpress.com',
       to: order.user.email,
       subject: `Order ${order.id} is being processed`,
       html: getReceiptHtml(order),
@@ -50,6 +50,7 @@ const getReceiptHtml = function (order) {
             <th>Unit Price</th>
             <th>Quantity</th>
             <th>Total Price</th>
+            <th>Expected Delivery Time</th>
           </tr>
         </thead>
         <tbody>
@@ -62,6 +63,7 @@ const getReceiptHtml = function (order) {
             <td>$${item.food.price}</td>
             <td>${item.quantity}</td>    
             <td>$${item.price.toFixed(2)}</td>
+            <td>$${item.time.toFixed(2)}</td>
             </tr>
             `
           )
